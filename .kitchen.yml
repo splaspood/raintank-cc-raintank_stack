@@ -1,6 +1,7 @@
 ---
 driver:
-  name: vagrant
+  name: docker
+  privileged: true
 
 provisioner:
   name: chef_solo
