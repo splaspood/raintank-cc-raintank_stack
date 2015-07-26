@@ -22,7 +22,7 @@ dependencies:
 test:
   override:
     - chef exec berks install
-    - chef exec kitchen test
+    - KITCHEN_YAML=.kitchen.circleci.yml exec kitchen test
 general:
   artifacts:
     - artifacts
