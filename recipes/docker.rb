@@ -20,6 +20,10 @@
 # Set up docker for the whole raintank stack. At the moment, this installs
 # cassandra, to avoid the hairy situation with its cookbooks right now.
 
+execute "install extra kernel mods" do
+  command "apt-get -y install linux-image-extra-$(uname -r)"
+end
+
 include_recipe "aufs"
 include_recipe "docker"
 
