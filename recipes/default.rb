@@ -17,9 +17,9 @@
 # limitations under the License.
 #
 
-include_recipe "raintank_stack::docker"
+#include_recipe "raintank_stack::docker"
 #include_recipe "raintank_stack::mysql"
-#include_recipe "raintank_stack::cassandra"
+include_recipe "raintank_stack::cassandra"
 include_recipe "raintank_stack::mariadb"
 include_recipe "raintank_stack::kairosdb"
 include_recipe "influxdb"

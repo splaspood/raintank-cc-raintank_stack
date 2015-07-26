@@ -10,7 +10,7 @@ end
 
 package 'cassandra'
 package 'cassandra-tools'
-package 'dsc21'
+package 'dsc22'
 
 service 'cassandra' do
   action [ :enable, :start ]
