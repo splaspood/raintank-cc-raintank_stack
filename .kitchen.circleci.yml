@@ -23,10 +23,10 @@ suites:
         server_debian_password: 'debpass'
         server_repl_password: 'replpass'
         use_default_repository: true
-      mysqld:
-        options:
-          binlog_format: 'ROW'
-          innodb_autoinc_lock_mode: 2
+        mysqld:
+          options:
+            binlog_format: 'ROW'
+            innodb_autoinc_lock_mode: 2
       grafana:
         domain: "portal.raintank.local"
         root_url: 'http\://portal.raintank.local/'
