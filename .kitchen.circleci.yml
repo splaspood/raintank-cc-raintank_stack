@@ -27,7 +27,7 @@ suites:
         use_default_repository: true
         mysqld:
           options:
-            binlog_format: 'ROW'
+            binlog_format: "'ROW'"
             innodb_autoinc_lock_mode: 2
       grafana:
         domain: "portal.raintank.local"
