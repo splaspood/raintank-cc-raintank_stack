@@ -104,30 +104,33 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         server_root_password: 'rootpass',
         server_debian_password: 'debpass',
         server_repl_password: 'replpass',
-	use_default_repository: true
+        use_default_repository: true,
+        apt_repository: {
+          base_url: "mariadb.uberglobalmirror.com/repo/"
+        },
       },
       grafana: {
-	domain: "portal.raintank.local",
-	root_url: "http://portal.raintank.local/",
-	db_type: "mysql",
-	db_host: "localhost",
-	db_port: "3306",
-	db_name: "grafana",
-	db_user: "root",
-	db_password: "rootpass",
+        domain: "portal.raintank.local",
+        root_url: "http://portal.raintank.local/",
+        db_type: "mysql",
+        db_host: "localhost",
+        db_port: "3306",
+        db_name: "grafana",
+        db_user: "root",
+        db_password: "rootpass",
       },
       raintank_stack: {
-	api_key: "eyJrIjoiWmZLTktlNHJ0UFFBdWtVdkRyemNiMjZPNFpralA1M3kiLCJuIjoiY29sbGVjdG9yIiwiaWQiOjF9",
-	ping_port: 9090,
-	kairosdb: {
-	  replication_factor: 1
-	},
-	nginx: {
-	  use_ssl: false
-	}
+        api_key: "eyJrIjoiWmZLTktlNHJ0UFFBdWtVdkRyemNiMjZPNFpralA1M3kiLCJuIjoiY29sbGVjdG9yIiwiaWQiOjF9",
+        ping_port: 9090,
+        kairosdb: {
+          replication_factor: 1
+        },
+        nginx: {
+          use_ssl: false
+        }
       },
       influxdb: {
-	version: "0.8.8"
+        version: "0.8.8"
       }
     }
 
