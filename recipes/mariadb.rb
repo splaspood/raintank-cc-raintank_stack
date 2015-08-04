@@ -19,6 +19,12 @@
 
 include_recipe "mariadb::galera"
 
+service "mysql" do
+  service_name 'mysql'
+  supports status: true, restart: true, reload: true
+  action [ :enable, :start]
+end
+
 # and create the grafana database if it doesn't exist. Installing grafana will
 # not, by itself, create it.
 mysql2_chef_gem 'default' do
