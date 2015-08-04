@@ -12,7 +12,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[raintank_stack::mariadb]
+      - recipe[raintank_stack::default]
     attributes:
       mysql:
         server_root_password: 'rootpass'
