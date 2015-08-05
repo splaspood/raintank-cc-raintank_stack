@@ -11,6 +11,7 @@ platforms:
     driver_config:
       image: chef/ubuntu-14.04
       disable_upstart: false
+      platform: ubuntu
 
 suites:
   - name: default
