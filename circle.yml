@@ -3,6 +3,7 @@ machine:
     - docker
   environment:
     CHEFDK_VERSION: "0.6.2-1"
+    KITCHEN_DOCKER_VERSION: "2.3.0"
 dependencies:
   pre:
     - mkdir -p chefdk
@@ -13,9 +14,7 @@ dependencies:
         sudo dpkg -i chefdk/chefdk_${CHEFDK_VERSION}_amd64.deb;
       fi
     - chef gem install specific_install
-    - sudo chef gem specific_install kitchen-docker -l http://github.com/peterabbott/kitchen-docker.git -b v1.6.4
-    - sudo chef gem uninstall chefspec
-    - chef gem install chefspec:4.0.1
+    - sudo chef gem specific_install kitchen-docker -l http://github.com/peterabbott/kitchen-docker.git -b v${KITCHEN_DOCKER_VERSION}
     - mkdir ~/.chef
     - cp ~/${CIRCLE_PROJECT_REPONAME}/test/circle/knife.rb ~/.chef/knife.rb
   cache_directories:
@@ -24,6 +23,3 @@ test:
   override:
     - chef exec berks install
     - KITCHEN_YAML=.kitchen.circleci.yml exec kitchen test
-general:
-  artifacts:
-    - artifacts
