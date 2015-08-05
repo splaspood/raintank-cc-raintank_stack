@@ -8,6 +8,8 @@ provisioner:
 
 platforms:
   - name: ubuntu-14.04
+    driver_config:
+      image: chef:ubuntu-14.04
 
 suites:
   - name: default
