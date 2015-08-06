@@ -1,7 +1,6 @@
 ---
 driver:
   name: vagrant
-  privileged: true
 
 provisioner:
   name: chef_solo

@@ -17,12 +17,13 @@
 # limitations under the License.
 #
 
-packagecloud_repo node[:raintank_stack][:packagecloud_repo] do
+packagecloud_repo node['raintank_stack']['packagecloud_repo'] do
   type "deb"
 end
 
 package "node-raintank-collector" do
   action :upgrade
+  version node['raintank_stack']['versions']['collector']
 end
 
 package "fping"
