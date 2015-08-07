@@ -23,6 +23,7 @@ end
 
 package "raintank-metric" do
   action :upgrade
+  version node['raintank_stack']['versions']['metric']
 end
 
 directory "/var/log/raintank" do

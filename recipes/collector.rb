@@ -17,11 +17,13 @@
 # limitations under the License.
 #
 
+include_recipe "apt::default"
+
 packagecloud_repo node['raintank_stack']['packagecloud_repo'] do
   type "deb"
 end
 
-package "node-raintank-collector" do
+package "raintank-collector" do
   action :upgrade
   version node['raintank_stack']['versions']['collector']
 end
@@ -43,6 +45,7 @@ template '/etc/init/raintank-collector.conf' do
   group 'root'
   action :create
   variables({
+    collector_app: node['raintank_stack']['collector_app'],
     collector_config: node['raintank_stack']['collector_config']
   })
 end

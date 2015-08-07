@@ -3,6 +3,7 @@ default[:raintank_stack][:packagecloud_repo] = "raintank/raintank"
 
 # Package Versions
 default[:raintank_stack][:versions][:collector] = "0.1.2"
+default[:raintank_stack][:versions][:metric] = "0.1.0"
 
 # kairosdb
 default[:raintank_stack][:kairosdb][:version] = "0.9.4"
@@ -32,6 +33,7 @@ default[:raintank_stack][:graphite_api][:statsd_port] = 8125
 default[:raintank_stack][:graphite_api][:log_level] = "INFO"
 
 # collector
+default[:raintank_stack][:collector_app] = "/opt/raintank-collector"
 default[:raintank_stack][:collector_config] = "/etc/raintank/collector/config.json"
 default[:raintank_stack][:collector_name] = "PublicTest"
 default[:raintank_stack][:num_cpus] = nil
