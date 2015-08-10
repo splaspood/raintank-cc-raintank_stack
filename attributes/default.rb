@@ -4,6 +4,7 @@ default[:raintank_stack][:packagecloud_repo] = "raintank/raintank"
 # Package Versions
 default[:raintank_stack][:versions][:collector] = "0.1.2"
 default[:raintank_stack][:versions][:metric] = "0.1.0"
+default[:raintank_stack][:versions][:graphite_api] = "1.0.1"
 
 # kairosdb
 default[:raintank_stack][:kairosdb][:version] = "0.9.4"

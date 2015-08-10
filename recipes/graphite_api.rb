@@ -23,7 +23,9 @@ end
 
 package "graphite-api-rt" do
   action :upgrade
+  version node['raintank_stack']['versions']['graphite_api']
 end
+
 group "graphite" do
   members "graphite"
   system
